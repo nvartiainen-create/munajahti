@@ -53,35 +53,30 @@ function checkPassword(id, correct) {
 <body>
 
 <h1>🥚 Munajahti alkaa!</h1>
-<p>Ratkaise vihjeet ja syötä huoneista löytyvät salasanat.</p>
+<p>Ratkaise vihjeet ja syötä löytynyt salasana.</p>
 
 <!-- Vihje 1 -->
 <div id="v1" class="vihje visible">
     <h2>Vihje 1</h2>
     <p><b>Koodi:</b> LFUJH</p>
-    <p><i>Ohje:</i> Tämä on Caesar-koodi. Selvitä netistä miten Caesar-salaus toimii ja etsi siirto, joka tuottaa sanan <b>KEITTIÖ</b>.</p>
-    <p>Kun löydät salasanan keittiöstä, syötä se tähän:</p>
-    <input id="pw1" type="password">
+    <p><i>Ohje:</i> Tämä on Caesar-koodi. Selvitä netistä miten Caesar-salaus toimii ja etsi siirto, joka tuottaa sanan KEITTIÖ.</p>
+    <input id="pw1" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(1, 'KANANMUNA')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 2 -->
 <div id="v2" class="vihje">
     <h2>Vihje 2</h2>
-    <p><b>Koodi (ROT13):</b> xngfb inauuna cbfgvyhhxxha</p>
-    <p>Purkamalla saat ohjeen: <i>katso vanhaan postiluukkuun</i>.</p>
-    <p>Syötä postiluukusta löytyvä salasana:</p>
-    <input id="pw2" type="password">
+    <p><b>ROT13:</b> xngfb inauuna cbfgvyhhxxha</p>
+    <input id="pw2" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(2, 'POSTI123')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 3 -->
 <div id="v3" class="vihje">
     <h2>Vihje 3</h2>
-    <p><b>Anagrammi:</b> K A P E L I K R U H O E</p>
-    <p>Järjestä kirjaimet huoneen nimeksi.</p>
-    <p>Syötä huoneesta löytyvä salasana:</p>
-    <input id="pw3" type="password">
+    <p><b>Anagrammi:</b> P E L I K K A R I H U O N E</p>
+    <input id="pw3" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(3, 'VICTORY')">Avaa seuraava</button>
 </div>
 
@@ -91,9 +86,7 @@ function checkPassword(id, correct) {
     <p><b>Matikkatehtävä:</b><br>
     (3 × 4) + 2 = __<br>
     Muuta tulos kirjaimeksi (1=A, 2=B...).</p>
-    <p>Lisävihje: Huone liittyy peseytymiseen Moonan siivessä.</p>
-    <p>Syötä huoneesta löytyvä salasana:</p>
-    <input id="pw4" type="password">
+    <input id="pw4" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(4, 'PESU')">Avaa seuraava</button>
 </div>
 
@@ -101,10 +94,8 @@ function checkPassword(id, correct) {
 <div id="v5" class="vihje">
     <h2>Vihje 5</h2>
     <p><b>HEX:</b> 4D 6F 6F 6E 61</p>
-    <p>Purku: MOONA → mene Moonan makuuhuoneeseen.</p>
-    <p>Syötä sieltä löytyvä salasana:</p>
-    <input id="pw5" type="password">
-    <button onclick="checkPassword(5, 'MOONA')">Avaa seuraava</button>
+    <input id="pw5" type="password" placeholder="syötä löytynyt salasana">
+    <button onclick="checkPassword(5, 'MONSTERI')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 6 -->
@@ -112,19 +103,16 @@ function checkPassword(id, correct) {
     <h2>Vihje 6</h2>
     <p><b>Binary:</b><br>
     01001100 01100001 01110011 01101001 01101000 01110101 01101111 01101110 01100101</p>
-    <p>Purku: LASIHUONE</p>
-    <p>Syötä lasihuoneesta löytyvä salasana:</p>
-    <input id="pw6" type="password">
+    <input id="pw6" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(6, 'LASI')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 7 -->
 <div id="v7" class="vihje">
     <h2>Vihje 7</h2>
-    <p><b>Atbash:</b> (koodattu versio lauseesta “latest victory royale was achieved here”)</p>
-    <p>Purku vie paikkaan, jossa Victory Royale on saavutettu.</p>
-    <p>Syötä huoneesta löytyvä salasana:</p>
-    <input id="pw7" type="password">
+    <p><b>Atbash:</b><br>
+    OZGVHG ERTGLIB IBLZOVWV DZHS ZXSZGVWV SIVIV</p>
+    <input id="pw7" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(7, 'FORTNITE')">Avaa seuraava</button>
 </div>
 
@@ -132,9 +120,7 @@ function checkPassword(id, correct) {
 <div id="v8" class="vihje">
     <h2>Vihje 8</h2>
     <p><b>Base32:</b> NNXWI2LONBXWS5DPNB2W63TF</p>
-    <p>Purku: KODINHOITOHUONE</p>
-    <p>Syötä kodinhoitohuoneesta löytyvä salasana:</p>
-    <input id="pw8" type="password">
+    <input id="pw8" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(8, 'PYYKKI')">Avaa seuraava</button>
 </div>
 
@@ -143,39 +129,34 @@ function checkPassword(id, correct) {
     <h2>Vihje 9</h2>
     <p><b>Morse:</b><br>
     - -.-- --- -.- .- .-.. .. .... ..- --- -. .</p>
-    <p>Purku: TYÖKALUHUONE</p>
-    <p>Syötä työkaluhuoneesta löytyvä salasana:</p>
-    <input id="pw9" type="password">
+    <input id="pw9" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(9, 'VASARA')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 10 -->
 <div id="v10" class="vihje">
     <h2>Vihje 10</h2>
-    <p><b>Matikka + kirjaimet:</b><br>
-    (5 × 4) = 20 → T<br>
-    (30 − 8) = 22 → V</p>
-    <p>Ratkaisu: TV</p>
-    <p>Syötä TV:n takaa löytyvä salasana:</p>
-    <input id="pw10" type="password">
-    <button onclick="checkPassword(10, 'TV')">Avaa seuraava</button>
+    <p><b>Matikka:</b><br>
+    (10 + 11 + 12 + 16 + 16 + 1 + 18 + 9) = __<br>
+    Muuta tulos kirjaimiksi (1=A, 2=B...).</p>
+    <input id="pw10" type="password" placeholder="syötä löytynyt salasana">
+    <button onclick="checkPassword(10, 'LASIPÖYTÄ')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 11 -->
 <div id="v11" class="vihje">
     <h2>Vihje 11</h2>
-    <p><b>ROT47:</b> (koodattu versio tekstistä “musta huone”)</p>
-    <p>Purku: MUSTA HUONE</p>
-    <p>Syötä mustasta huoneesta löytyvä salasana:</p>
-    <input id="pw11" type="password">
+    <p><b>ROT47:</b><br>
+    %96 E6 D@C6?5 ECF?5</p>
+    <input id="pw11" type="password" placeholder="syötä löytynyt salasana">
     <button onclick="checkPassword(11, 'MUSTA')">Avaa seuraava</button>
 </div>
 
 <!-- Vihje 12 -->
 <div id="v12" class="vihje">
     <h2>Vihje 12</h2>
-    <p><b>Binary:</b> (koodattu versio tekstistä “takan vieressä”)</p>
-    <p>Purku: TAKAN VIERESSÄ</p>
+    <p><b>Binary:</b><br>
+    01010100 01000001 01001011 01000001 01001110 00100000 01010110 01001001 01000101 01010010 01000101 01010011 01010011 11000011 10101010</p>
     <h2>🎉 AARRE LÖYTYI!</h2>
 </div>
 
