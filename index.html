@@ -79,6 +79,119 @@ function checkPassword(id, correct) {
         alert("Väärä salasana.");
     }
 }
+
+/* --- TÄHÄN LISÄTÄÄN TROLLAUSKOODI --- */
+
+let playerName = "";
+let trollStep = 0;
+
+function startTroll() {
+    const name = document.getElementById("playerNameInput").value.trim();
+    if (!name) { alert("Kirjoita nyt joku nimi."); return; }
+    playerName = name;
+    trollStep = 1;
+    trollAdvance();
+}
+
+function trollAdvance() {
+    const box = document.getElementById("trollaus");
+    box.classList.add("bounce");
+    setTimeout(() => box.classList.remove("bounce"), 400);
+
+    switch (trollStep) {
+
+        case 1:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Ei tuo voi olla sinun nimesi.</p>
+                <button onclick="trollStep=2; trollAdvance()">Kyllä se on</button>
+                <button onclick="trollStep=2; trollAdvance()">Ei ole</button>
+            `;
+            break;
+
+        case 2:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Hmm… oletko ehkä pääsiäispupu?</p>
+                <button onclick="trollStep=3; trollAdvance()">Kyllä</button>
+                <button onclick="trollStep=3; trollAdvance()">En</button>
+            `;
+            break;
+
+        case 3:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Ei, ei… ei tämä nyt tunnu oikealta. Kokeillaanko uudelleen?</p>
+                <button onclick="trollStep=4; trollAdvance()">Kokeillaan</button>
+                <button onclick="trollStep=4; trollAdvance()">Ei todellakaan</button>
+            `;
+            break;
+
+        case 4:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Lopetetaanko trollaus?</p>
+                <button onclick="trollStep=5; trollAdvance()">Lopetetaan</button>
+                <button onclick="trollStep=3; trollAdvance()">Ei lopeteta</button>
+            `;
+            break;
+
+        case 5:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Oletko varma?</p>
+                <button onclick="trollStep=6; trollAdvance()">Olen</button>
+                <button onclick="trollStep=3; trollAdvance()">En ole</button>
+            `;
+            break;
+
+        case 6:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Oletko <b>ihan</b> varma?</p>
+                <button onclick="trollStep=7; trollAdvance()">Olen ihan varma</button>
+                <button onclick="trollStep=3; trollAdvance()">En olekaan</button>
+            `;
+            break;
+
+        case 7:
+            box.innerHTML = `
+                <h2><span class="bunny">🐰</span>Vihje 0</h2>
+                <p>Selvä… mikä sinun nimesi olikaan?</p>
+                <input id="playerNameConfirm" type="text" placeholder="Kirjoita nimesi uudelleen">
+                <button onclick="finishTroll()">Jatka</button>
+            `;
+            break;
+    }
+}
+
+function finishTroll() {
+    const name2 = document.getElementById("playerNameConfirm").value.trim();
+    if (!name2) { alert("Kirjoita nyt joku nimi."); return; }
+
+    playerName = name2;
+
+    document.getElementById("trollaus").innerHTML = `
+        <h2><span class="bunny">🐰</span>Vihje 0</h2>
+        <p>Hyvä on, <b>${playerName}</b>. Ehkä et olekaan pääsiäispupu…</p>
+        <p>Aloitetaan sitten munajahti!</p>
+    `;
+
+    setTimeout(() => {
+        document.getElementById("trollaus").classList.remove("visible");
+        document.getElementById("v1").classList.add("visible");
+        addNameToHints();
+    }, 1800);
+}
+
+function addNameToHints() {
+    const hints = document.querySelectorAll(".vihje h2");
+    hints.forEach(h => {
+        if (!h.innerText.includes("Vihje 0")) {
+            h.innerHTML += ` <span style="font-size:14px; color:#777;">🐰 ${playerName}, sinä pystyt tähän!</span>`;
+        }
+    });
+}
 </script>
 </head>
 <body>
